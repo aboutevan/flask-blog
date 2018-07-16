@@ -19,3 +19,10 @@
 # >>> User.query.filter_by(username='Corey')
 # <flask_sqlalchemy.BaseQuery object at 0x1043b8860>
 # >>> User.query.filter_by(username='Corey').all()
+
+>>> from flask_bcrypt import Bcrypt
+>>> bcrypt=Bcrypt()
+>>> bcrypt.generate_password_hash('testing')
+b'$2b$12$L/9ILKuBt43ih.9fEVxeYOCRbHtcXU9OY.394YL3Adc2f9hVarFyK'
+>>> bcrypt.generate_password_hash('testing').decode('utf-8')
+'$2b$12$whokBL4vjizTRv/COQD2YuaHtIpCZfAavPeU/7n7lZyCXIxRVYKJO'
